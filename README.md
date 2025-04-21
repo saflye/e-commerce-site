@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# E-Commerce Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce site, kullanıcıların ürünleri görüntüleyebileceği, detaylarını inceleyebileceği ve satın alma işlemleri yapabileceği bir platformdur. Proje, erkek ve kadın kıyafetleri, mücevher/takı, elektronik aletler gibi kategorilerde ürünler sunmaktadır.
 
-Currently, two official plugins are available:
+## Kullanılan Teknolojiler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite** - Hızlı geliştirme ortamı
+- **React** - Kullanıcı arayüzü için
+- **TypeScript** - Güçlü tip güvenliği
+- **JSON Server** - Sahte backend ile kullanıcı verisi ve ürün bilgisi
+- **MUI (Material-UI)** - UI bileşenleri için
 
-## Expanding the ESLint configuration
+## Kurulum
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Projeyi yerel ortamda çalıştırmak için:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Projeyi klonlayın:
+    ```bash
+    git clone https://github.com/your-username/e-commerce-site.git
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Gerekli bağımlılıkları yükleyin:
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. JSON Server'ı başlatın (db.json dosyasını kullanarak sahte backend başlatmak için):
+    ```bash
+    npm run server
+    ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+4. Geliştirme sunucusunu başlatın:
+    ```bash
+    npm run dev
+    ```
+
+Proje şu anda yerel ortamda **`http://localhost:3000`** adresinde çalıştırılabilir.
+
+## Klasör Yapısı
+
+- `src/` - Uygulamanın kaynak dosyaları
+- `db.json` - Kullanıcı isimleri, şifreleri ve bakiyelerinin yer aldığı JSON dosyası (JSON Server için)
+- `vite.config.ts` - Vite yapılandırma dosyası
+
+##Özellikler
+
+- **Kullanıcı Girişi ve Kayıt** - Kullanıcılar hesap oluşturabilir ve giriş yapabilir.
+- **Ürün Listeleme** - Kategorilere göre ürünleri listeleyebilir ve detaylarına ulaşabilirsiniz.
+- **Sepet Özelliği** - Ürünleri sepete ekleyebilir ve satın alabilirsiniz.
+- **Ürün Satın Alma** - Kullanıcılar ödeme yaparak ürün satın alabilirler.
+
+##  Notlar
+
+Bu proje bireysel gelişim amacıyla oluşturulmuştur ve bir sahte backend (JSON Server) kullanmaktadır.
+
