@@ -52,4 +52,9 @@ Proje şu anda yerel ortamda **`http://localhost:3000`** adresinde çalıştır�
 ##  Notlar
 
 Bu proje bireysel gelişim amacıyla oluşturulmuştur ve bir sahte backend (JSON Server) kullanmaktadır.
+json-server --watch .\src\jsonserver\db.json --port 5000
+
+## Ana Sayfa Görseli
+
+![Image](https://github.com/user-attachments/assets/f4ce9f61-e988-4bf6-bfb7-e6c5ee4741c2)
 
